@@ -80,6 +80,5 @@ test:
 #
 production:
   <<: *default
-  database: free_college_production
-  username: free_college
-  password: <%= ENV['FREE_COLLEGE_DATABASE_PASSWORD'] %>
+  database: free_college_development
+  
