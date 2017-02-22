@@ -16,6 +16,7 @@ describe "API for countries" do
     expect(response).to be_success
     expect(countries.count).to eq(3)
     expect(country).to have_key("name")
+    
     countries.each do |country|
       expect(country["region_id"]).to eq(@region.id)
     end
