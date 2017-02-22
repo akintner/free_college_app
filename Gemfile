@@ -38,6 +38,7 @@ group :test do
   gem 'capybara'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'rack_session_access'
+  gem 'launchy'
 end
 
 group :development do

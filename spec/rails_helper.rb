@@ -10,6 +10,8 @@ require 'factory_girl'
 require 'shoulda/matchers'
 require 'rack_session_access/capybara'
 require 'database_cleaner'
+require 'capybara'
+require 'launchy'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 

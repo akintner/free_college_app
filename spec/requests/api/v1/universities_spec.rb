@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "API for universities" do
-  before (:each) do
+  before do
     @region = create(:region)
     countries = create_list(:country, 3)
     @region.countries << countries
@@ -18,7 +18,7 @@ describe "API for universities" do
 
     universities = JSON.parse(response.body)
     univ = universities.first
-
+    
     expect(response).to be_success
     expect(universities.count).to eq(4)
     expect(univ).to have_key("name")
@@ -31,7 +31,7 @@ describe "API for universities" do
   end
 
   it "provides read access for universities scoped to country" do 
-    get "/api/v1/#{country2.id}/universities"
+    get "/api/v1/countries/#{@country2.id}/universities"
     
     universities = JSON.parse(response.body)
     univ = universities.first
