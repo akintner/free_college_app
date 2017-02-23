@@ -1,4 +1,4 @@
-class Api::V1::CountriesController < ApplicationController
+class Api::V1::CountriesController < API::V1::BaseController
   def index
     render json: Country.all
   end

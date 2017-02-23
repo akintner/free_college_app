@@ -1,4 +1,4 @@
-class Api::V1::UniversitiesController < ApplicationController
+class Api::V1::UniversitiesController < API::V1::BaseController
   def index
     render json: University.all
   end
