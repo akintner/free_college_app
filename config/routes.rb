@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         get "/universities", to: "countries#show"
       end
       get "/universities", to: "universities#index"
+      resources :regions, only: [:index, :show]
     end
   end
 end
