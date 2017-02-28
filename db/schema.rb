@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222184931) do
+ActiveRecord::Schema.define(version: 20170228025939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,8 @@ ActiveRecord::Schema.define(version: 20170222184931) do
     t.integer  "country_id"
     t.float    "application_fee"
     t.float    "tuition_fee"
-    t.boolean  "visa"
+    t.string   "visa"
+    t.string   "language"
     t.index ["country_id"], name: "index_universities_on_country_id", using: :btree
   end
 
