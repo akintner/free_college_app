@@ -41,14 +41,14 @@ class Seed
   def generate_universities
     20.times do |i|
       uni = University.create!(name: Faker::University.name, tuition_fee: 1000.00, application_fee: 50.00,
-        visa: true, country_id: Country.all.sample.id )
-      puts "University #{i}: #{uni.name} created"
+        visa: "necessary for stays longer than 3 motnhs", language: Faker::Beer.hop, country_id: Country.all.sample.id )
+      puts "University #{i}: #{uni.name} with courses in #{uni.language} created"
     end
 
     10.times do |i|
       uni = University.create!(name: Faker::University.name, tuition_fee: 1000.00, application_fee: 50.00,
-        visa: true, country_id: Country.all.sample.id )
-      puts "University #{i}: #{uni.name} created"
+        visa: "not needed", language: Faker::StarWars.planet, country_id: Country.all.sample.id )
+      puts "University #{i}: #{uni.name} with courses in #{uni.language} created"
     end
   end
 end
