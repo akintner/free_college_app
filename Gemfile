@@ -23,6 +23,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'faker'
 gem 'figaro'
 gem 'rails-i18n', '~> 5.0.0' 
+gem 'nokogiri'
+gem 'mechanize'
+gem 'faraday'
 
 
 group :development, :test do
@@ -33,7 +36,6 @@ end
 
 group :test do 
   gem 'simplecov', :require => false
-  gem 'faraday'
   gem 'rspec-rails'
   gem 'factory_girl'
   gem 'capybara'

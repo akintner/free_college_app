@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   
   resources :countries, only: [:index]
 
+  get "/universities", to: "universities#index"
+  
   namespace :api do 
     namespace :v1 do 
       resources :countries, only: [:index] do 
