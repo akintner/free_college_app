@@ -39,15 +39,21 @@ class Seed
   end
 
   def generate_universities
-    20.times do |i|
-      uni = University.create!(name: Faker::University.name, tuition_fee: 1000.00, application_fee: 50.00,
-        visa: "necessary for stays longer than 3 motnhs", language: Faker::Beer.hop, country_id: Country.all.sample.id )
+    app_fee = [0.00, 50.00, 100.00, 75.00, 150.00, 35.00]
+    tuition = [0.00, 1500.00, 650.00, 900.00, 750.00, 350.00, 475.00]
+
+    30.times do |i|
+      uni = University.create!(name: "University of " + Faker::Address.city, city: Faker::Address.city, tuition_fee: tuition.sample, application_fee: app_fee.sample,
+        degree_offered: Faker::Demographic.educational_attainment, uni_website: Faker::Internet.domain_name, visa: "necessary for stays longer than 3 motnhs", language: Faker::Beer.hop, country_id: Country.all.sample.id )
       puts "University #{i}: #{uni.name} with courses in #{uni.language} created"
     end
-
-    10.times do |i|
-      uni = University.create!(name: Faker::University.name, tuition_fee: 1000.00, application_fee: 50.00,
-        visa: "not needed", language: Faker::StarWars.planet, country_id: Country.all.sample.id )
+    5.times do |i|
+      uni = University.create!(name: ["Öffentliche Verlautbarungen der Stadt Wien", "Technische Universität Austria", "Universität Salzburg", "Technische Hochschule"].sample, city: ["Vienna", "Salzburg", "Innsbruck", "Hallstatt", "Graz", "Linz"].sample, tuition_fee: tuition.sample, application_fee: app_fee.sample,
+        degree_offered: Faker::Demographic.educational_attainment, uni_website: "http://www.uni-salzburg.at/index.php?id=52&L=1", visa: "necessary for stays longer than 3 motnhs", language: ["German", "English"].sample, country_id: Country.find_by(name: "Austria").id )
+      puts "University #{i}: #{uni.name} with courses in #{uni.language} created"
+    end
+    8.times do |i|
+      uni = University.create!(name: ["Universitas Catholica Eystettensis - Ingolstadii", "Technische Universität Germany", "Rheinisch-Westfälische Technische Hochschule Aachen", "Humboldt-Universität zu Berlin", "Universität Koeln"].sample, city: ["Berlin", "Aachen", "Bonn", "Munich", "Freiburg", "Hamburg"].sample,    tuition_fee: tuition.sample, application_fee: app_fee.sample, degree_offered: Faker::Demographic.educational_attainment, uni_website: "http://www.ku-eichstaett.de", visa: "necessary for stays longer than 3 motnhs", language: ["German", "English"].sample, country_id: Country.find_by(name: "Germany").id )
       puts "University #{i}: #{uni.name} with courses in #{uni.language} created"
     end
   end
