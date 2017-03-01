@@ -1,10 +1,10 @@
 <h3>Welcome to the German Universities Page</h3>
-<% @unis.each do |uni| %>
+<% @unis.each do |university| %>
 <ul>
-  <h4><%= uni.course_name %> at <%= uni.uni_name %></h4>
-    <p>Where: <%= uni.city %>, Germany</p>
-    <p>Degree type offered: <%= uni.degree_type %></p>
-    <p>What Semester(s): <%= uni.semester %></p>
-    <p>Language of Courses: <%= uni.language %></p>
+  <h4><%= university.course_name %> at <%= university.uni_name %></h4>
+    <p>Where: <%= university.city_name %>, Germany</p>
+    <p>Degree type offered: <%= university.degree_type %></p>
+    <p>What Semester(s): <%= university.semester %></p>
+    <p>Language of Courses: <%= university.language %></p>
 </ul>
 <% end %>
