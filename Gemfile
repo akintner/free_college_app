@@ -26,6 +26,7 @@ gem 'rails-i18n', '~> 5.0.0'
 gem 'nokogiri'
 gem 'mechanize'
 gem 'faraday'
+gem 'skylight'
 
 
 group :development, :test do
