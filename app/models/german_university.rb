@@ -1,24 +1,19 @@
-class GermanUniversity
-  attr_reader :id, :name, :uni_name, :city, :degree_type, :semester, :language
+class GermanUniversity 
+    attr_reader :course_name, :uni_name, :city_name, :degree_type, :semester, :language
 
     def initialize(attributes)
-      @name = attributes[:name]
+      @course_name      = attributes[:name]
       @uni_name         = attributes[:hsname]
-      @city         = attributes[:hsStandort]
-      @degree_type  = attributes[:abschlussart]
+      @city_name        = attributes[:hsStandort]
+      @degree_type      = attributes[:abschlussart]
       @semester         = attributes[:zulassungssemester]
-      @language        = attributes[:hauptsprache]
-      @attrs = attributes
+      @language         = attributes[:hauptsprache]
     end
-
-    def full_name
-      "#{@attrs[:name]} at #{@attrs[:hsname]}"
-    end
-
 
     def self.find_universities
       UniversityService.find_universities.map do |uni|
         new(uni)
+        # University.new(name: "#{uni[:name]} at #{uni[:hsname]}", city: uni[:hsStandort], country_id: Country.find_by(name: "Germany"), language: uni[:hauptsprache], visa: "required for stays longer than 3 months")
       end
     end
   end
