@@ -15,8 +15,11 @@ This overall imetus behind this app comes from the fact that there are more than
 * Database Configuration: once you have cloned the repo and bundled for gems, you will have to set up the database on your local machine. To do this, please run the following commands from your terminal in order:
 <br>
 `rake db:create` (this will create the two postgresql databases needed to run the project)
+<br>
 `rake db:migrate` (this will load all the database tables with the information specified in the migration files)  
+<br>
 `rake db:test:prepare` (this will ensure that you can run the test specs)  
+<br>
 `rake db:import_csvs` (this will load all of the info from the CSV files into the database)  
 
 * How to run the test suite: once you have set up the database, you can run the test specs by simply typing `rspec` into the terminal. 
