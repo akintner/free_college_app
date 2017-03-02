@@ -12,13 +12,13 @@ This overall imetus behind this app comes from the fact that there are more than
 
 * General Configuration: clone down this repo, `bundle` to ensure all the Gemfile dependencies are loaded on your local computer, and then you will need to load, migrate, and seed the database with the CSV files.
 
-* Database Configuration: once you have cloned the repo and bundled for gems, you will have to set up the database on your local machine. To do this, please run the following commands from your terminal in order:
+* Database Configuration: once you have cloned the repo and bundled for gems, you will have to set up the database on your local machine. To do this, please run the following commands from your terminal in this order:
 <br>
-`rake db:create` (this will create the two postgresql databases needed to run the project)
+`rake db:create` (this will create the postgresql database needed to run the project)
 <br>
-`rake db:migrate` (this will load all the database tables with the information specified in the migration files)  
+`rake db:migrate` (this will load all the database tables with the information specified in the migration files)
 <br>
-`rake db:test:prepare` (this will ensure that you can run the test specs)  
+`rake db:test:prepare` (this will ensure that you can run the test specs)
 <br>
 `rake db:import_csvs` (this will load all of the info from the CSV files into the database)  
 
